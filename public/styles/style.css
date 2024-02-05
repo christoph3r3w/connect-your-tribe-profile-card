@@ -1,0 +1,153 @@
+* {
+  box-sizing:border-box;
+  margin: 0;
+  padding: 0;
+  appearance: none;
+  list-style: none;
+  text-decoration: none;
+}
+html {
+  scroll-snap-type:y mandatory ;
+  width: 100dvi;
+}
+
+:root{
+  --x:40cqi;
+  --y:60cqh;
+}
+
+body {
+  outline: solid ; 
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  height: 100dvh;
+  container-type: inline-size;
+  
+
+}
+
+.screen{
+  
+  position: absolute;
+  inset: 15cqi 30cqi;
+  
+  background-image: url(/public/images/uGRFZEs.jpeg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: antiquewhite;
+}
+
+body .screen:has(:hover,:focus) {
+
+  &.screen{
+    inset: 6cqi;
+    background-color: aquamarine;
+  }
+
+  .taskbar{
+    height: 5cqh;
+  }
+
+  #window_card{
+    inset: unset;
+    top: 3rem;
+    right: 3rem;
+    
+  }
+}
+
+.desktop{
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.desktop_items{
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas: auto;
+  padding: 2%;
+  gap: 2cqi;
+  outline: solid;
+}
+
+.desktop_items li{
+  /* grid-column:cnt ; */
+}
+
+.trash_can{
+  position: absolute;
+  right: 1.5cqi;
+  bottom: 10%;
+}
+
+#window_card{
+  position: absolute;
+  /* top: calc(var(--y, 0) * .98px);
+  left: calc(var(--x, 0) * 1px); */
+ 
+
+  inset: 5cqi;
+
+  outline: solid green;
+  contain: content;
+}
+
+.taskbar{
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 2rem;
+
+  > nav{
+    position: relative;
+    display: flex;
+    background-color: yellow;
+    width: 100%;
+    height: 100%;
+    
+  }
+
+  .start{
+    width: 4cqi;
+    height: 100%;
+    display: grid;
+    grid-area: 1/1;
+    place-content: center;
+    padding-inline: 1cqw;
+    /* background-color: yellow; */
+    /* outline: solid; */
+  }
+  nav .bar{
+    position: relative;
+    width: 2rem;
+    height: 100%;
+    flex-grow: 1;
+    background-color: blue;
+
+  }
+  .extra_icons{
+    background-color: green;
+    flex-basis: 4cqw;
+    height: 100%;
+    display: grid;
+    place-content:center ;
+
+    ul{
+      display: flex;
+      flex-direction: row;
+      
+      li{
+        flex-grow: 1;
+        height: 100%;
+        /* outline: solid; */
+      }
+    }
+  }
+
+
+}
+

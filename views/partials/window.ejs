@@ -1,0 +1,43 @@
+<section class="window">
+    <%= window %>
+    <header class="window_header">
+        <h2><%= data.name %></h2>
+
+        <ul>
+            <li title="Min">min</li>
+            <li title="Max">max</li>
+            <li title="exit"><a href="/">x</a></li>
+        </ul>
+    </header>
+
+    <aside> 
+        <ul>
+            <li>icon<img src="/" alt=""></li>
+            <li>icon<img src="/" alt=""></li>
+            <li>icon<img src="/" alt=""></li>
+            <li>icon<img src="/" alt=""></li>
+            <li>icon<img src="/" alt=""></li>
+            <li>icon<img src="/" alt=""></li>
+            
+        </ul>
+    </aside>
+    <section>
+        <div>
+            <div><%= data.avatar %></div>
+            <h3><%= data.name %></h3>
+        </div>
+
+        <div class="info">
+            <ul>
+                <li><%= data.name %></li>
+                <li><%= data.surname  %></li>
+                <li><a href=<%= data.website %>>Github</a></li>
+                <li><%= data.email %></li>
+                <li><%= data.phone_number %></li>
+                <li><%= data.squad_id %></li>
+            </ul>
+        </div>
+    </section>
+
+
+</section>

@@ -1,14 +1,50 @@
 <%- include('./partials/head') %>
 
-<article>
-  <header>
-    <h1>Hallo</h1>
-    <p>mijn naam is</p>
-  </header>
+<main class="screen">
 
-  <p><%= data.name %></p>
+  <section class="desktop">
+    <ul class="desktop_items">
 
-  <footer></footer>
-</article>
+      <li><a href="#"> <img src="/public/images/icon/1005.ico" alt=""> icon</a></li>
+      <li><a href="#"> <img src="/public/images/icon/1012.ico" alt=""> icon</a></li>
+      <li><a href="#"> <img src="/public/images/icon/1221.ico" alt=""> icon</a></li>
+      <li><a href="#"> <img src="/public/images/icon/1224.ico" alt=""> icon</a></li>
+      
+    </ul>
+    
+    <div class="trash_can"><a href="#"> <img src="/public/images/icon/1224.ico" alt=""> icon</a></div>
+
+    <div id="window_card" > <%- include('./partials/window', {window: ''}) %> </div>
+
+    <menu popover id="start_menu ">menu</menu>
+
+    <!-- <div popover ><%- include('./partials/window', {window: 'window 2'}) %></div> -->
+
+  </section>
+ 
+  <footer class="taskbar">
+    <nav>
+      <button class="start" popovertarget="start_menu">
+        start
+        <!-- <img src="/public/images/download.png" alt="start" sizes="" > -->
+       </button>
+      <div class="bar"></div>
+      <div class="extra_icons">
+        <ul>
+          <li><a href="#"><img src="" alt="">icon</a></li>
+          <li><a href="#"><img src="" alt=""> icon</a></li>
+        </ul>
+      </div>
+    </nav>
+  </footer>
+  
+
+
+
+
+  
+</main>
+
+
 
 <%- include('./partials/foot') %>
