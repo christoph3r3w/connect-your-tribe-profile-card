@@ -8,10 +8,10 @@
     "doc": "docs"
   },
   "scripts": {
-    "start": "nodemon server.js"
-    
+    "start": "nodemon server.js",
+    "dev": "nodemon sever.js"
   },
-
+  
   "repository": {
     "type": "git",
     "url": "git+https://github.com/fdnd-task/connect-your-tribe-profile-card.git"
