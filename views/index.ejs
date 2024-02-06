@@ -7,18 +7,23 @@
 
       <li><a href="#"> <img src="images/icon/839.ico" alt=""><div><p>home</p></div></a></li>
       <li><a href="#"> <img src="images/icon/1012.ico" alt=""><div><p>personal</p></div></a></li>
-      <li><a href="#"> <img src="images/icon/1221.ico" alt=""><div><p>website</p></div></a></li>
+      <li><a href="https://open.spotify.com/playlist/5sreN3dVcxw56cSMTgTF49"> <img src="images/icon/1221.ico" alt=""><div><p>Music</p></div></a></li>
       <li><a href="#"> <img src="images/icon/1224.ico" alt=""><div><p>sprint</p></div></a></li>
+      <li><a href="<%= website %>"> <img src="images/github.png" sizes="80" alt=""><div><p>github</p></div></a></li>
       
     </ul>
     
     <div class="trash_can"><a href="#"> <img src="images/icon/261.ico" alt=""></a></div>
 
-    <div id="window_card" > <%- include('./partials/window', {window: ''}) %> </div>
+    <div id="window_personal" class="window_card" >
+       <%- include('./partials/window_head', {window_head: ''}) %> 
+       <%- include('./partials/window_aside_bottom', {window_a_b: '1'}) %> 
+       <%- include('./partials/window_personal', {window_personal: ''}) %> 
+    </div>
 
     <menu popover id="start_menu ">menu</menu>
 
-    <!-- <div popover ><%- include('./partials/window', {window: 'window 2'}) %></div> -->
+   
 
   </section>
  
