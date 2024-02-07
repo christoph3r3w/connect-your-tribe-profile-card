@@ -13,28 +13,33 @@
 }
 html {
   scroll-snap-type:y mandatory ;
-  width: 100dvi;
+  
 }
 
 :root{
+  /* custom positioning  */
   --x:40cqi;
   --y:60cqh;
 
+  /* global curve */
+  --g-c: 7px;
+  /* globar radius */
+  --g-r: var(--g-c) var(--g-c) 0px 0px;
+
   /* blue */
-  --primary-bl: #0062ff;
-  --secondary-bl: #106cd5;
+  --primary-bl: #235cda;
+  --secondary-bl: #4158d4;
+  --tertiary-bl: #118fe8;
+  --quaternary-bl: #7389fe;
   /* green */
-  --primary-gr: #0a990f;
-  --secondary-gr: #106cd5;
+  --primary-gr: #217821;
+  --secondary-gr: #2b9e2b;
   /* beige */
-  --primary-be: #d8cda2;
-  --secondary-be: #106cd5;
+  --primary-be: #ede9d3;
   /* yellow-orange */
-  --primary-y-o: #ffd000;
-  --secondary-y-o: #106cd5;
+  --primary-y-o: #f9be00;
   /* red */
-  --primary-re: #ff0000;
-  --secondary-re: #106cd5;
+  --primary-re: #ff4f00;
   /* white and black */
   --base-w: #ffffff;
   --base-b : #000000;
@@ -42,7 +47,7 @@ html {
 }
 
 body {
-  outline: solid ; 
+  /* outline: solid green ;  */
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
   height: 100dvh;
   container-type: inline-size;
@@ -59,6 +64,9 @@ body {
   background-size: cover;
   box-shadow: 0px 0px 1px 1px rgba(106, 145, 216, 0.751);
   /* background-color: antiquewhite; */
+
+  container-type:inline-size ;
+  contain: content;
 }
 
 body .screen:has(:hover,:focus) {
@@ -102,7 +110,24 @@ body .screen:has(:hover,:focus) {
 }
 
 .desktop_items li{
-  /* grid-column:cnt ; */
+  aspect-ratio: 1/1;
+  padding: 1%;
+  width: min-content;
+  display: grid;
+  place-content: center;
+
+  >button{
+    background-color: transparent;
+    border: none;
+  }
+
+  &:hover{
+    filter: brightness(1.05);
+  }
+
+  :focus{
+    background-color: #235ddab8;
+  }
 }
 
 .trash_can{
@@ -112,27 +137,55 @@ body .screen:has(:hover,:focus) {
 }
 
 
+
 /* windows style */
 .window_card{
   position: absolute;
+  height: unset;
+  width: unset;
+  overflow: unset;
+  color: none;
   /* top: calc(var(--y, 0) * .98px);
   left: calc(var(--x, 0) * 1px); */
- 
+  
   background-color: aliceblue;
   border: 3px solid var(--secondary-bl);
-  inset: 5cqi;
+  border-radius: var(--g-r) ;
+  inset: unset;
+  right: 5rem;
+  container-type:inline-size ;
   contain: content;
 
   display: grid;
   grid-template-areas:  "a a a a"
                         "b c c c"
                         "b c c c";
+
+  padding:0;
+  margin: 0;
+
+  &::backdrop{
+    display: none;
+  }
+
 }
 
-/* window header  */
+[popover]:not(:popover-open):not(dialog[open]) {
+  display: none;
+}
 
+/* #personal {
+  position:absolute;
+  inset:15cqi;
+  border: solid red;
+  width: 30cqi;
+  aspect-ratio: 16/9;
+
+  
+} */
+
+/* window header  */
 .window_header{
-  outline: solid;
   grid-area: a;
   display: flex;
   flex-direction: column;
@@ -144,6 +197,7 @@ body .screen:has(:hover,:focus) {
     display: flex;
     flex-direction: row;
     background-color: var(--primary-bl);
+    color: var(--base-w);
 
     span{
       flex-grow: 1;
@@ -154,7 +208,37 @@ body .screen:has(:hover,:focus) {
       display: grid;
       grid-template-columns: repeat(3,1fr);
       grid-template-rows: 1fr;
-    
+      gap: .2cqi;
+      margin-bottom: .1rem;
+     
+    }
+
+    li{
+      border: 1px solid var(--base-w);
+      border-radius: calc(var(--g-c) - 3px);
+      color: var(--base-w);
+      height: 100%;
+      width: 1.5rem;
+      display: grid;
+      padding: auto;
+      
+      aspect-ratio: 1/1;
+
+      &:nth-of-type(1){
+        background-color: var(--primary-bl);
+        place-content: end space-between;
+        cursor: not-allowed;
+        padding-inline: .1cqi;
+      }
+      &:nth-of-type(2){
+        background-color: var(--primary-re);
+        place-content: center;
+        a{color: var(--base-w);}
+      }
+
+      &:hover{
+        filter: brightness(1.15);
+      }
     }
   }
 
@@ -173,46 +257,55 @@ body .screen:has(:hover,:focus) {
 
 }
 
+/* aside */
 .file_explorer{
   grid-area: b;
   display: grid;
   grid-template-rows: repeat(3,1fr);
   grid-template-columns: 1fr;
   padding-inline: 1rem;
-  background-color: var(--secondary-bl);
+  padding-block: 2%;
+  background-color: var(--quaternary-bl);
   row-gap:1rem ;
 
   ul{
-    border-color: var(--base-w);
-    border-radius: 1pc;
+    border: 2px solid var(--base-w);
+    border-radius: var(--g-r);
     display: flex;
     flex-direction: column;
+    background-color: var(--quaternary-bl);
+    
   }
 
   p{
     background-color: var(--base-w);
     color: var(--primary-bl);
+    border-radius: calc(var(--g-r) - 2px);
+    padding-inline: 3%;
   }
 
   li{
     width: 100%;
-    
+    color: var(--primary-bl);
+    padding-inline: 3%;
   }
 
+}
 
 
-
-
+.window_content{
+  grid-area: c;
+  overflow-y: scroll;
+  padding-top: 2%;
+ 
+  
 }
 
 
 
 
 
-
-
-
-
+/* taskbar elements */
 .taskbar{
   position: absolute;
   bottom: 0;
@@ -235,22 +328,31 @@ body .screen:has(:hover,:focus) {
     display: flex;
     flex-direction: row;
     padding-inline: .3cqi;
+    gap: .3cqi;
     border-radius: 0px .8pc .8pc 0px;
     border: 5px;
     position: absolute;
     left: 0;
     top: 0;
     bottom: 0;
-    background-color: green;
-    
-    
+    background-color: var(--primary-gr);
+    color: var(--base-w);
     z-index: 3;
+
+    &:hover,:focus{
+      filter: brightness(1.12);
+    }
+    &:has(:active) p,img{
+      filter: brightness(0.98);
+      scale: 0.98;
+    }
     
     img,p{
       font-size: clamp(1rem,2cqi,2rem);
       font-size: 1.5cqw ;
       width: 1.8cqi;
       margin-block: auto ;
+      filter: drop-shadow(0px 1px 2px var(--base-b));
     }
   }
   nav .bar{
@@ -258,11 +360,11 @@ body .screen:has(:hover,:focus) {
     width: 2rem;
     height: 100%;
     flex-grow: 1;
-    background-color: blue;
+    background-color: var(--primary-bl);
 
   }
   .extra_icons{
-    background-color: rgb(0, 83, 128);
+    background-color: var(--tertiary-bl);
     flex-basis: 4cqw;
     height: 100%;
     display: grid;
@@ -278,7 +380,7 @@ body .screen:has(:hover,:focus) {
         flex-grow: 1;
         height: 100%;
         padding-inline: .5rem;
-        /* outline: solid; */
+        span{color: var(--base-w);}
       }
     }
   }
