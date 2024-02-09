@@ -9,9 +9,8 @@
   },
   "scripts": {
     "start": "node server.js",
-    "dev": "nodemon sever.js"
+    "dev": "nodemon server.js"
   },
-  
   "repository": {
     "type": "git",
     "url": "git+https://github.com/fdnd-task/connect-your-tribe-profile-card.git"

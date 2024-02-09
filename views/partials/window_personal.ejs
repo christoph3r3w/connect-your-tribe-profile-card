@@ -1,20 +1,20 @@
+<%- include('./window_head', {window_head: ''}) %>  
+<%- include('./window_aside_bottom', {window_a_b: ''}) %> 
 <%= window_personal %>
 <section class="window_content">
-
     
-        <div>
+        <div class="profile">
             <div><img src="<%= avatar %>" alt="avatar"></div>
-            <h3><%= name %></h3>
+            <h2><%= name %></h2>
+            <h3><%= surname  %></h3>
         </div>
     
         <div class="info">
             <ul>
-                <li><%= name %></li>
-                <li><%= surname  %></li>
                 <li><a href=<%= website %>>Github</a></li>
-                <li><%= email %></li>
-                <li><%= phone_number %></li>
-                <li><%= squad_id %></li>
+                <li><legend>e-mail</legend><p><%= email %></p></li>
+                <li><legend>phone number</legend><p><%= phone_number %></p></li>
+                <li><legend> squad-id</legend><p><%= squad_id %></p></li>
             </ul>
         </div>
    

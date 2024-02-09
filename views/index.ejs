@@ -5,11 +5,11 @@
   <section class="desktop">
     <ul class="desktop_items">
 
-      <li><a href="#"> <img src="images/icon/839.ico" alt=""><div><p>home</p></div></a></li>
-      <li><button popovertarget="personal"> <img src="images/icon/1012.ico" alt=""><div><p>personal</p></div></button></li>
-      <li><a href="https://open.spotify.com/playlist/5sreN3dVcxw56cSMTgTF49"> <img src="images/icon/1221.ico" alt=""><div><p>Music</p></div></a></li>
-      <li><a href="https://programma.fdnd.nl/data-driven-web/connect-your-tribe" target="self"> <img src="images/icon/1224.ico" alt=""><div><p>sprint</p></div></a></li>
-      <li><a href="<%= website %>"> <img src="images/github.png" sizes="80" alt=""><div><p>github</p></div></a></li>
+      <li><button href="#"> <img src="images/icon/839.ico" alt=""><div><p>home</p></div></button></li>
+      <li><button popovertarget="personal" popovertargetaction="show" > <img src="images/chris icon lowlowres.png" alt=""><div><p>personal</p></div></button></li>
+      <li><button popovertarget="music" > <img src="images/icon/1221.ico" alt=""><div><p>Music</p></div></button></li>
+      <li><button popovertarget="sprint" popovertargetaction="show" > <img src="images/icon/1224.ico" alt=""><div><p>sprint</p></div></button></li>
+      <li><button><a href="<%= website %>"><img src="images/github.png" sizes="80" alt=""><div><p>github</p></div></a></button></li>
       
     </ul>
     
@@ -17,12 +17,64 @@
 
          
       <div popover id="personal" class="window_card" >
-        <%- include('./partials/window_head', {window_head: ''}) %> 
-        <%- include('./partials/window_aside_bottom', {window_a_b: ''}) %> 
         <%- include('./partials/window_personal', {window_personal: ''}) %> 
       </div>
 
-    <menu popover id="start_menu ">menu</menu>
+      <div popover id="sprint" class="window_card" >
+        <%- include('./partials/window_sprint', {window_sprint: ''}) %> 
+      </div>
+
+      <div popover="auto" id="music" class="window_card" >
+        <%- include('./partials/window_music', {window_music: ''}) %> 
+      </div>
+
+    <div popover id="start_menu">
+      <header class="start_bar_header">
+        <img src="<%= avatar %>" alt="header avatar">
+        <p><%= name %></p>
+      </header>
+      <div>
+        <menu class="main_icons">
+          <li><a href="#"> <img src="images/icon/839.ico" alt=""><div><p>home</p></div></a></li>
+          <li><button popovertarget="personal"> <img src="images/chris icon lowlowres.png" alt=""><div><p>personal</p></div></button></li>
+          <li><button popovertarget="music"> <img src="images/icon/1221.ico" alt=""><div><p>Music</p></div></button></li>
+          <li><button popovertarget="sprint" > <img src="images/icon/1224.ico" alt=""><div><p>sprint</p></div></button></li>
+          <li><a href="<%= website %>"><img src="images/github.png" sizes="80" alt=""><div><p>github</p></div></a></li>
+    
+        </menu>
+        <menu class="other_icon">
+          <li>
+            <img src="" alt="">
+            <p></p>
+          </li>
+          <li>
+            <img src="" alt="">
+            <p></p>
+          </li>
+          <li>
+            <img src="" alt="">
+            <p></p>
+          </li>
+          <li>
+            <img src="" alt="">
+            <p></p>
+          </li>
+          <li>
+            <img src="" alt="">
+            <p></p>
+          </li>
+          <li>
+            <img src="" alt="">
+            <p></p>
+          </li>
+          <li>
+            <img src="" alt="">
+            <p></p>
+          </li>
+        </menu>
+      </div>
+
+    </div>
 
    
 
@@ -30,14 +82,14 @@
  
   <footer class="taskbar">
     <nav>
-      <button class="start" popovertarget="start_menu"><img src="images/pngwing.com.png" alt="windows logo" sizes="20" > <p>start</p></button>
+      <button class="start" popovertarget="start_menu" popovertargetaction="show"><img src="images/pngwing.com.png" alt="windows logo" sizes="20" > <p>start</p></button>
       <div class="bar"></div>
       <div class="extra_icons">
         <ul>
-          <li><a href="#"><img src="images/icon/1005.ico" alt=""></a></li>
+          <li><button class="window_theme"><img src="images/icon/1005.ico" alt="theme icon"></button></li>
           <li><a href="#"><img src="images/icon/975.ico" alt=""> </a></li>
           <li><a href="#"><img src="images/icon/952.ico" alt=""> </a></li>
-          <li><span>11:11</span></li>
+          <li><p class="current_T">11:11</p></li>
         </ul>
 
         
@@ -54,3 +106,5 @@
 
 
 <%- include('./partials/foot') %>
+
+

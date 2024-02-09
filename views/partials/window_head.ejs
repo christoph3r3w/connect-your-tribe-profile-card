@@ -1,11 +1,14 @@
 <%= window_head %>
 <header class="window_header">
     <div class="blue_bar">
-        <span>Personal</span>
+        <span></span>
         <ul>
-            <li title="Min">__</li>
+            <li  title="Min">__</li>
             <!-- <li title="Max"></li> -->
-            <li title="exit"><a href="/">✕</a></li>
+            <li class="exit_b" title="exit"><button class="exit" 
+                 popovertargetaction="hide">✕</button>
+                
+            </li>
         </ul>
     </div>
     <menu type="toolbar">
@@ -18,7 +21,7 @@
     </menu>
 
     <menu type="context">
-        <span><button>icon</button> <p>back</p></span>
+        <span><button>icon</button> <span>back</span></span>
         <span><button>icon svg</button></span>
         <span><button>home</button></span>
         <span><input type="search" name="explore" id="explore"></span>
