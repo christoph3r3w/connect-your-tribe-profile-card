@@ -16,16 +16,16 @@
     <div class="trash_can"><a href="#"> <img src="images/icon/261.ico" alt=""></a></div>
 
          
-      <div popover id="personal" class="window_card" >
-        <%- include('./partials/window_personal', {window_personal: ''}) %> 
+      <div popover="manual" id="personal" class="window_card" >
+        <%- include('./partials/window_personal', {window_personal: '',window_type:'personal'}) %> 
       </div>
 
-      <div popover id="sprint" class="window_card" >
-        <%- include('./partials/window_sprint', {window_sprint: ''}) %> 
+      <div popover="manual" id="sprint" class="window_card" >
+        <%- include('./partials/window_sprint', {window_sprint: '',window_type:'sprint'}) %> 
       </div>
 
-      <div popover="auto" id="music" class="window_card" >
-        <%- include('./partials/window_music', {window_music: ''}) %> 
+      <div popover="manual" id="music" class="window_card" >
+        <%- include('./partials/window_music', {window_music: '',window_type:'music'}) %> 
       </div>
 
     <div popover id="start_menu">

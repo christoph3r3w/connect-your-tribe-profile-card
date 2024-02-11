@@ -72,7 +72,7 @@ body {
   }
 
   &:has(.screen:hover,:focus){
-    background-image: url(/images/Bliss_Wallpaper_Animated.webm);
+    /* background-image: url(/images/Bliss_Wallpaper_Animated.webm); */
     /* background-image: url(/images/uGRFZEs.jpeg); */
     background-position: center;
     background-repeat: no-repeat;
@@ -91,7 +91,7 @@ body {
   transition: 1s ease-in-out 1s;
   position: absolute;
   inset: 15cqi 30cqi;
-  /* inset: 6cqi; */
+  inset: 6cqi;
   
   background-image: url(/images/uGRFZEs.jpeg);
   background-position: center;
@@ -195,12 +195,14 @@ body .screen:has(:hover,:focus) {
 
 /* windows style */
 [popover]{
-  position: unset;
+  position: absolute;
   height: unset;
   width: unset;
   overflow: unset;
   color: none;
   inset: unset;
+
+  
 }
 
 /* important for window opening and closing */
@@ -212,19 +214,19 @@ body .screen:has(:hover,:focus) {
   position: absolute;
   /* top: calc(var(--y, 0) * .98px);
   left: calc(var(--x, 0) * 1px); */
+  width: 50cqi;
+  top: 3rem;
+  right: 3rem;
+  z-index: -3;
   
   background-color: aliceblue;
   border: 3px solid var(--primary-bl);
   border-radius: var(--g-r) ;
  
-  right: 5rem;
   container-type:inline-size ;
   contain: content;
 
-  width: 50cqi;
-  top: 3rem;
-  right: 3rem;
-
+  
   display: grid;
   grid-template-areas:  "a a a a"
                         "b c c c"
@@ -237,6 +239,11 @@ body .screen:has(:hover,:focus) {
     /* display: none; */
     /* background-color: #000; */
     pointer-events: none;
+  }
+
+  &:nth-of-type(n):hover{
+    z-index: 6;
+    outline: solid;
   }
 
 }
@@ -402,17 +409,22 @@ body .screen:has(:hover,:focus) {
 
 /* user information */
 #personal {
-  position:absolute;
-  inset: 8cqi;
-  width: 50cqi;
+  /* position:absolute; */
+  /* inset: 10cqi; */
+  top: 10cqi ;
+  left: 37cqi;
+  width: 52cqi;
+  height: auto;
   aspect-ratio: 16/9;
-
+  container-name: container-P;
+  container-type: inline-size;
 
   .window_content{
     display: grid;
     grid-template-columns: [cnt1-start]1fr[cnt1-end cnt2-start]1fr[cnt2-end];
     scrollbar-gutter: stable;
     padding-top: 0%;
+    height: auto;
   }
 
 
@@ -501,9 +513,21 @@ body .screen:has(:hover,:focus) {
   
 }
 
+@container container-P (width < 37cqi) {
+.window_content{
+  grid-column-start: b;
+  grid-column-end: c;
+}
+
+  .file_explorer{
+    display: none;
+  }
+}
+
 /* school window */
 #sprint {
-
+  top:2cqi ;
+  left: 1cqi;
   height: 70cqh;
   .window_content{
     padding: 0;
@@ -522,10 +546,13 @@ body .screen:has(:hover,:focus) {
 
 /* music window */
 #music{
-  height: 70cqh;
+
+  top:25cqi ;
+  left: 62cqi;
 
   .window_header{ 
-    height: 1cqh;
+    
+    .blue_bar{ height: 3cqh;z-index: 3;}
     menu[type=context]{display: none;}
     menu[type=toolbar]{display: none;}
   }
@@ -536,7 +563,7 @@ body .screen:has(:hover,:focus) {
     grid-area: 1/1/-1/-1;
     width: 100cqi;
     overflow: hidden;
-    
+    height: 50cqh;
   }
 
   #spotify{

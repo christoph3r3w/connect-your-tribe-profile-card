@@ -1,12 +1,12 @@
 <%= window_head %>
 <header class="window_header">
     <div class="blue_bar">
-        <span></span>
+        <span><%= window_type %></span>
         <ul>
             <li  title="Min">__</li>
             <!-- <li title="Max"></li> -->
             <li class="exit_b" title="exit"><button class="exit" 
-                 popovertargetaction="hide">✕</button>
+                 popovertarget="<%= window_type %>" popovertargetaction="hide">✕</button>
                 
             </li>
         </ul>
