@@ -1,7 +1,11 @@
-> _Fork_ deze leertaak en ga aan de slag. Onderstaande outline ga je gedurende deze taak in jouw eigen GitHub omgeving uitwerken. De instructie vind je in: [docs/INSTRUCTIONS.md](docs/INSTRUCTIONS.md)
 
-# Titel
-<!-- Geef je project een titel en schrijf in één zin wat het is -->
+
+# Profile card with node.js
+
+
+![Screenshot 2024-02-09 1321401](https://github.com/christoph3r3w/connect-your-tribe-profile-card/assets/144007933/506f4c74-dab9-4acc-838e-884ee113d6ca)
+
+
 
 ## Inhoudsopgave
 
@@ -13,18 +17,31 @@
   * [Licentie](#licentie)
 
 ## Beschrijving
-<!-- In de Beschrijving staat hoe je project er uit ziet, hoe het werkt en wat je er mee kan. -->
-<!-- Voeg een mooie poster visual toe 📸 -->
-<!-- Voeg een link toe naar Github Pages 🌐-->
+we had to remake our profile card from [Sprint 1](https://github.com/christoph3r3w/your-tribe-css-basics) with node.js
 
 ## Kenmerken
-<!-- Bij Kenmerken staat welke technieken zijn gebruikt en hoe. Wat is de HTML structuur? Wat zijn de belangrijkste dingen in CSS? Wat is er met Javascript gedaan en hoe? Misschien heb je een framwork of library gebruikt? -->
+ * HTML
+ * CSS
+ * JS
+ * EJS
+ * node.js
+ * nodemon
 
 ## Installatie
-
-## Gebruik
+ * npm
+ * node'js
+ * nodemon
 
 ## Bronnen
+* mdn
+* chrome for dev
+* gradient generator
+* log rocket
+* internet archive
+
+
+
+> _Fork_ deze leertaak en ga aan de slag. Onderstaande outline ga je gedurende deze taak in jouw eigen GitHub omgeving uitwerken. De instructie vind je in: [docs/INSTRUCTIONS.md](docs/INSTRUCTIONS.md)
 
 ## Licentie
 
