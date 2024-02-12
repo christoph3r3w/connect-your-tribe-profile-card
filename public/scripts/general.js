@@ -1,4 +1,5 @@
 const body = document.querySelector('body');
+const root = document.querySelector(':root');
 const screen = document.querySelector('screen');
 const B_start = document.querySelector('.start');
 const theme = document.querySelector('.window_theme');
@@ -7,10 +8,27 @@ const theme = document.querySelector('.window_theme');
 var bentana = document.querySelector('div.window_card').id;
 const exit = document.querySelector('.exit');
 
-// ask about dynamic atribute
-exit.addEventListener(click,(e=>{
 
-}))
+theme.addEventListener('click',(e)=>{
+    body.classList.toggle('dark_theme');
+    root.classList.toggle('dark_theme');
+    console.log('it worked')
+})
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 console.log(bentana);
 // let check = function(){

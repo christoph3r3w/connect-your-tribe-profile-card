@@ -7,16 +7,7 @@
   text-decoration: none;
   font-family: 'Tahoma', Geneva, Verdana, sans-serif;
 
-  &li{
-    /* font-family: 'Tahoma', Geneva, Verdana, sans-serif; */
-  }
-
-  
 }
-
- /* body {
-  background-color: yellow;
- } */
 
 
 html {
@@ -48,22 +39,153 @@ html {
   --primary-y-o: #f9be00;
   /* red */
   --primary-re: #ff4f00;
-  /* white and black */
+  --secondary-re: #ff510078;
+  /* base color white and black */
   --base-w: #ffffff;
-  --base-b : #000000;
+  --base-b: #000000;
+  --base-Text-w: white;
+  --base-Text-b: black;
+  --base-Text-bl:var(--primary-bl);
+
+  /* gradients */
+  --gradient-b: linear-gradient(0deg,
+                              var(--primary-bl) 37%,
+                            hsl(222deg 70% 40%) 87%,
+                            hsl(221deg 69% 49%) 98%,
+                            hsl(221deg 69% 49%) 98%,
+                            hsl(221deg 70% 75%) 100%
+  );
+  --gradient-light-b:linear-gradient(
+    0deg,
+    hsl(205deg 79% 44%) 0%,
+    hsl(205deg 73% 51%) 4%,
+    hsl(205deg 80% 51%) 64%,
+    hsl(205deg 76% 54%) 90%,
+    hsl(205deg 49% 68%) 100%
+    );
+  --gradient-g:linear-gradient(
+    0deg,
+    hsl(120deg 57% 39%) 0%,
+    hsl(120deg 35% 55%) 45%,
+    hsl(120deg 43% 50%) 79%,
+    hsl(120deg 51% 48%) 92%,
+    hsl(120deg 33% 74%) 100%
+    );
+  --gradient-w-1: linear-gradient(38deg, 
+                              rgba(255,255,255,1) 47%, 
+                              rgba(255,255,255,0) 100%);
+  --gradient-w-2: linear-gradient(90deg, 
+  rgba(255,255,255,0.6951155462184874) 0%, 
+  rgba(255,255,255,0.2777485994397759) 33%, 
+  rgba(255,255,255,0.3113620448179272) 69%, 
+  rgba(255,255,255,0.7203256302521008) 100%);    
+ 
+
+}
+
+/* darkmode things */
+.dark_theme{
+  
+  /* globar radius */
+  --g-r: var(--g-c) var(--g-c) 0px 0px;
+
+  --primary-bl: #0C111C;
+  --secondary-bl: #040057;
+  --tertiary-bl: #0C111C;
+  --quaternary-bl: #020024a4;
+  /* green */
+  --primary-gr: #217821;
+  --secondary-gr: #2b9e2b;
+  /* beige */
+  --primary-be: #1e222ad1;
+  /* yellow-orange */
+  --primary-y-o: #f9be00;
+  /* red */
+  --primary-re: #ff4f00;
+  --secondary-re: #a66a5f;
+  
+  /* base color white and black */
+  --base-b: #ffffff;
+  --base-w: #000000;
+  /* base text color */
+  --base-Text-w: white;
+  --base-Text-b: white;
+  --base-Text-bl:var(--primary-bl);
+  
+  /* gradients */
+  --gradient-b: linear-gradient(0deg,
+                            hsl(221, 72%, 10%) 37%,
+                            hsl(222, 70%, 6%) 87%,
+                            hsla(223, 68%, 6%, 0.69) 98%,
+                            hsla(221, 47%, 66%, 0.6) 100%
+  );
+  --gradient-b: linear-gradient(0deg,
+                            #0C111C 37%,
+                            hsl(222, 70%, 6%) 87%,
+                            #0C111C 98%,
+                            hsla(221, 47%, 66%, 0.6) 100%
+  );
+  --gradient-light-b: linear-gradient(0deg,
+  #0C111C 37%,
+  hsl(222, 70%, 6%) 87%,
+  #0C111C 98%,
+  hsla(221, 47%, 66%, 0.6) 100%
+  );
+
+  --gradient-g:linear-gradient(
+    0deg,
+    hsl(120deg 57% 39%) 0%,
+    hsl(120deg 43% 40%) 79%,
+    hsl(120deg 57% 39%) 92%,
+    hsl(120deg 33% 74%) 100%
+    );
+  --gradient-w-1: linear-gradient(38deg, 
+    rgba(255, 255, 255, 0.323) 47%, 
+    rgba(255,255,255,0) 100%);
+  --gradient-w-2: linear-gradient(90deg, 
+    rgba(255, 255, 255, 0.277) 0%, 
+    rgba(255,255,255,0.2777485994397759) 33%, 
+    rgba(255,255,255,0.3113620448179272) 69%, 
+    rgba(255, 255, 255, 0.262) 100%);   
+ 
+ 
+ 
+    &>.screen{
+    /* background-color: #217821; */
+    background-image: url(/images/pixelcut-export.png) !important;
+  }
+
+  .window_card{ 
+
+    .window_content{
+    background-color: var(--primary-be) !important;  
+    }  
+
+    .profile{
+      background-color: var(--primary-be) !important;
+      box-shadow: .05px 0px 8px 1px var(--secondary-re);
+
+      }
+
+    .file_explorer{
+        background-color: var(--primary-bl);
+        ul{border-radius: var(--g-r);background-color: var(--quaternary-bl);}
+    }
+      
+    
+  }
   
 }
 
 
 body {
-  /* outline: solid green ;  */
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
   height: 100dvh;
-  /* container-type: inline-size; */
   scrollbar-gutter: stable both-edges;
-
-  backdrop-filter: blur(100px) brightness(10) opacity(4);
-  transition: 6s ease-in-out 3s;
+  background-color: var(--base-w);
+  backdrop-filter: blur(100px) brightness(1) opacity(4);
+  transition: 1s ease-in-out 1s;
+  /* container-type: inline-size; */
 
   button{
     background-color: transparent;
@@ -85,13 +207,13 @@ body {
   }
 }
 
-
+/* main rectangle screen */
 .screen{
   
   transition: 1s ease-in-out 1s;
   position: absolute;
   inset: 15cqi 30cqi;
-  inset: 6cqi;
+  /* inset: 6cqi; */
   
   background-image: url(/images/uGRFZEs.jpeg);
   background-position: center;
@@ -109,7 +231,8 @@ body .screen:has(:hover,:focus) {
   &.screen{
     inset: 6cqi;
     border-radius: 7px;
-    /* background-color: aquamarine; */
+    box-shadow: 0px .5px 10px 1px rgba(88, 87, 87, 0.545),
+                0px -3px 70px 9px rgba(117, 117, 117, 0.407);
     transition: 1s ease-in-out 1s;
   }
 
@@ -130,6 +253,8 @@ body .screen:has(:hover,:focus) {
     right: 3rem;
     
   }
+
+  /* .desktop_items li:nth-of-type(5){width: 100%;scale:1; button{width: max-content;img{width: 5cqi;transition: 1s 1s;}}} */
 }
 
 
@@ -160,8 +285,12 @@ body .screen:has(:hover,:focus) {
   place-content: center;
   aspect-ratio: 1/1;
   scale: 1;
+  
+  button{color:var(--base-Text-b);>a{color:var(--base-Text-b);}}
 
-  &:is(:nth-last-of-type(1),:nth-of-type(2)) img{scale: .8;}
+  &:is(:nth-last-of-type(1),:nth-of-type(2),:nth-last-of-type(2)) img{scale: .8;}
+
+  &:nth-of-type(5){width: 100%;scale:1; button{width: max-content; img{width: 4rem;}}}
 
   &:hover{
     filter: brightness(1.05);
@@ -217,7 +346,7 @@ body .screen:has(:hover,:focus) {
   width: 50cqi;
   top: 3rem;
   right: 3rem;
-  z-index: -3;
+  
   
   background-color: aliceblue;
   border: 3px solid var(--primary-bl);
@@ -242,13 +371,10 @@ body .screen:has(:hover,:focus) {
   }
 
   &:nth-of-type(n):hover{
-    z-index: 6;
-    outline: solid;
+    /* z-index: 6; */
   }
 
 }
-
-
 
 
 /* window header  */
@@ -264,14 +390,8 @@ body .screen:has(:hover,:focus) {
     display: flex;
     flex-direction: row;
     background-color: var(--primary-bl);
-    background-image: linear-gradient(
-      0deg,
-    hsl(221deg 72% 50%) 37%,
-    hsl(222deg 70% 40%) 87%,
-    hsl(221deg 69% 49%) 98%,
-    hsl(221deg 70% 75%) 100%
-    ); 
-    color: var(--base-w);
+    background-image: var(--gradient-b) ; 
+    color: var(--base-Text-w);
 
     span{
       flex-grow: 1;
@@ -288,9 +408,9 @@ body .screen:has(:hover,:focus) {
     }
 
     li{
-      border: 1px solid var(--base-w);
+      border: 1px solid var(--base-Text-w);
       border-radius: calc(var(--g-c) - 3px);
-      color: var(--base-w);
+      color: var(--base-Text-w);
       height: 100%;
       width: 1.5rem;
       display: grid;
@@ -307,7 +427,7 @@ body .screen:has(:hover,:focus) {
       &.exit_b{
         background-color: var(--primary-re);
         place-content: center;
-        .exit{color: var(--base-w);}
+        .exit{color: var(--base-Text-w);}
       }
 
       &:hover{
@@ -323,6 +443,7 @@ body .screen:has(:hover,:focus) {
     padding-block: 1%;
     gap: 5%;
     cursor:not-allowed;
+    color: var(--base-Text-b);
   }
   menu[type=context]{
     display: flex;
@@ -330,6 +451,7 @@ body .screen:has(:hover,:focus) {
     justify-content:space-evenly;
     cursor:not-allowed;
     padding-block: 1%;
+    color: var(--base-Text-b);
 
     span{
       display: flex;
@@ -364,23 +486,23 @@ body .screen:has(:hover,:focus) {
     border-radius: var(--g-r);
     display: flex;
     flex-direction: column;
-    /* gap: 5%; */
     background-color: var(--quaternary-bl);
-    background: linear-gradient(90deg, rgba(255,255,255,0.6951155462184874) 0%, rgba(255,255,255,0.2777485994397759) 33%, rgba(255,255,255,0.3113620448179272) 69%, rgba(255,255,255,0.7203256302521008) 100%);    height: 100%;
+    background: var(--gradient-w-2); 
+    height: 100%;
     
     
   }
 
   p{
-    background: linear-gradient(38deg, rgba(255,255,255,1) 47%, rgba(255,255,255,0) 100%);    color: var(--primary-bl);
+    background: var(--gradient-w-1);    
     border-radius: calc(var(--g-r) - 2px);
     padding-inline: 3%;
-    color: var(--primary-bl);
+    color: var(--base-Text-bl);
     
   }
 
   li{
-    color: var(--primary-bl);
+    color: var(--base-Text-bl);
     padding-inline: 3%;
     padding-block: 2%;
     display: flex;
@@ -425,21 +547,33 @@ body .screen:has(:hover,:focus) {
     scrollbar-gutter: stable;
     padding-top: 0%;
     height: auto;
+    color: var(--base-Text-b);
   }
 
 
   .profile{
     grid-column: cnt1;
+    container-type:inline-size ;
+    position: relative;
     place-content: start;
     display: flex;
     flex-direction: column;
-    width: 30cqw;
-    /* border-right: 1px solid var(--primary-re); */
-    box-shadow: .05px 0px 8px 1px #ff510078;
-    
+    width: 35cqw;
+    box-shadow: .05px 0px 8px 1px var(--secondary-re);
     background-color:#8a9bfbb5;
-    container-type:inline-size ;
-
+  
+    
+    .profile_bg{
+      position: absolute;
+      top: 0;
+      z-index: 0;
+      filter: blur(10px) brightness(.5) contrast(70%) opacity(.6);
+      object-fit: cover;
+      object-position: center;
+      height: 100cqh;
+      width: 100cqw;
+      outline: solid;
+    }
   
     div:has(img){
       width: 100%;
@@ -463,7 +597,7 @@ body .screen:has(:hover,:focus) {
 
     img{
       aspect-ratio: 1 / 1;
-      width: minmax(70%,min-content);
+      width: minmax(10px,100cqi);
     }
 
     h2,h3{
@@ -472,6 +606,8 @@ body .screen:has(:hover,:focus) {
       word-wrap:normal;
       margin-top: 20%;
       padding-inline: 10%;
+      color: var(--base-Text-w);
+      filter: brightness(1.3);
     }
 
   }
@@ -480,13 +616,14 @@ body .screen:has(:hover,:focus) {
     grid-column: cnt2;
     display: flex;
     flex-direction: column;
-    place-content: center;
+    place-content: start center;
     
     >ul{
       display: flex;
       flex-direction: column;
       gap: 9%;
       height: 90%;
+      padding-inline-start: 9%;
     }
 
     li{
@@ -576,10 +713,11 @@ body .screen:has(:hover,:focus) {
 /* taskbar elements */
 .taskbar{
   position: absolute;
-  bottom: 0;
+  bottom: -1px;
   width: 100%;
   height: 3cqh;
-  container-type: size ;
+  container-type: inline-size ;
+  transition: 1s 1s;
 
   > nav{
     position: relative;
@@ -605,16 +743,9 @@ body .screen:has(:hover,:focus) {
     top: 0;
     bottom: 0;
     background-color: var(--primary-gr);
-    background-image: linear-gradient(
-    0deg,
-    hsl(120deg 57% 39%) 0%,
-    hsl(120deg 35% 55%) 45%,
-    hsl(120deg 43% 50%) 79%,
-    hsl(120deg 51% 48%) 92%,
-    hsl(120deg 33% 74%) 100%
-    );
-    color: var(--base-w);
-    z-index: 3;
+    background-image: var(--gradient-g);
+    color: var(--base-Text-w);
+    z-index: 1;
 
     &:hover,:focus{
       filter: brightness(1.12);
@@ -629,7 +760,7 @@ body .screen:has(:hover,:focus) {
       font-size: 1.5cqw ;
       width: 1.8cqi;
       margin-block: auto ;
-      filter: drop-shadow(0px 1px 2px var(--base-b));
+      filter: drop-shadow(0px 1px 2px #0C111C);
     }
   }
   nav .bar{
@@ -637,25 +768,12 @@ body .screen:has(:hover,:focus) {
     width: 2rem;
     height: 100%;
     flex-grow: 1;
-    background-color: var(--primary-bl);
-    background-image: linear-gradient(
-      0deg,
-    hsl(221deg 72% 50%) 37%,
-    hsl(222deg 70% 40%) 87%,
-    hsl(221deg 69% 49%) 98%,
-    hsl(221deg 70% 75%) 100%
-    ); 
+    /* background-color: var(--primary-bl); */
+    background-image: var(--gradient-b); 
   }
   .extra_icons{
     background-color: var(--tertiary-bl);
-    background-image: linear-gradient(
-    0deg,
-    hsl(205deg 79% 44%) 0%,
-    hsl(205deg 73% 51%) 4%,
-    hsl(205deg 80% 51%) 64%,
-    hsl(205deg 76% 54%) 90%,
-    hsl(205deg 49% 68%) 100%
-    );
+    background-image: var(--gradient-light-b) ;
     flex-basis: 4cqw;
     height: 100%;
     display: grid;
@@ -671,13 +789,19 @@ body .screen:has(:hover,:focus) {
         flex-grow: 1;
         height: 100%;
         padding-inline: .5rem;
-        span{color: var(--base-w);}
+        span{color: var(--base-Text-w);}
+      }
+
+      li:nth-last-of-type(1){
+        color: var(--base-Text-b);
       }
     }
   }
 
 
 }
+
+
 
 #start_menu{
 
