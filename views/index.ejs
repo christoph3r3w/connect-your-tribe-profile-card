@@ -3,21 +3,20 @@
 <main class="screen">
 
   <section class="desktop">
-    <ul class="desktop_items">
 
+    <ul class="desktop_items">
       <li><button href="#"> <img src="images/icon/839.ico" alt=""><div><p>home</p></div></button></li>
       <li><button popovertarget="personal" popovertargetaction="show" > <img src="images/chris icon lowlowres.png" alt="personal card icon"><div><p><%= nickname%></p></div></button></li>
       <li><button popovertarget="music" > <img src="images/icon/1221.ico" alt="music icon"><div><p>Music</p></div></button></li>
       <li><button popovertarget="sprint" popovertargetaction="show" > <img src="images/icon/1224.ico" alt="sprint icon"><div><p>sprint</p></div></button></li>
       <li><button popovertarget="game" popovertargetaction="show" > <img src="/images/tumblr_b08776446c99e97ddb6379663d96b2ab_f289af9d_541.png" alt="game icon"><div><p>squad-game</p></div></button></li>
       <li><button><a href="<%= website %>"><img src="images/github.png" sizes="80" alt=""><div><p>github</p></div></a></button></li>
-      
     </ul>
     
-    <div class="trash_can"><a href="#"> <img src="images/icon/261.ico" alt=""></a></div>
+    <button class="trash_can"><a href="#"> <img src="images/icon/261.ico" alt=""></a></button>
 
          
-      <div popover id="personal" class="window_card" >
+      <div popover="manual" id="personal" class="window_card" >
         <%- include('./partials/window_personal', {window_personal: '',window_type:'personal'}) %> 
       </div>
 
@@ -35,7 +34,7 @@
 
 
       <!-- start button menu -->
-    <div popover id="start_menu">
+    <div popover anchor="start_b" id="start_menu">
       <header class="start_bar_header">
         <img src="<%= avatar %>" alt="header avatar">
         <p><%= name %></p>
@@ -90,7 +89,7 @@
  
   <footer class="taskbar">
     <nav>
-      <button class="start" popovertarget="start_menu" popovertargetaction="show"><img src="images/pngwing.com.png" alt="windows logo" sizes="20" > <p>start</p></button>
+      <button id="start_b" class="start" popovertarget="start_menu" popovertargetaction="show"><img src="images/pngwing.com.png" alt="windows logo" sizes="20" > <p>start</p></button>
       <div class="bar"></div>
       <div class="extra_icons">
         <ul>

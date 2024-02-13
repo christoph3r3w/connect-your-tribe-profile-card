@@ -79,6 +79,9 @@ html {
   rgba(255,255,255,0.2777485994397759) 33%, 
   rgba(255,255,255,0.3113620448179272) 69%, 
   rgba(255,255,255,0.7203256302521008) 100%);    
+
+  /* transition */
+  --transiton-global: 1s ease-in-out .8s;
  
 
 }
@@ -149,7 +152,7 @@ html {
     rgba(255, 255, 255, 0.262) 100%);   
  
  
- 
+    
     &>.screen{
     /* background-color: #217821; */
     background-image: url(/images/pixelcut-export.png) !important;
@@ -184,7 +187,7 @@ body {
   scrollbar-gutter: stable both-edges;
   background-color: var(--base-w);
   backdrop-filter: blur(100px) brightness(1) opacity(4);
-  transition: 1s ease-in-out 1s;
+  transition: 1s;
   /* container-type: inline-size; */
 
   button{
@@ -200,8 +203,8 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
     backdrop-filter: blur(100px) brightness(1) opacity(4);
-    transition: 7s ease-in-out 4s;
-    transition-delay: 6s;
+    transition: 3s ease-in-out;
+    transition-delay: 3s;
     /* transition-property: brightness; */
     
   }
@@ -210,7 +213,8 @@ body {
 /* main rectangle screen */
 .screen{
   
-  transition: 1s ease-in-out 1s;
+  transition: var(--transiton-global);
+  
   position: absolute;
   inset: 15cqi 30cqi;
   /* inset: 6cqi; */
@@ -222,33 +226,40 @@ body {
   box-shadow: 0px 0px 1px 1px rgba(106, 145, 216, 0.751);
 
   container-type:inline-size ;
+  container-name:screen ;
   contain: content;
+
+  &:nth-child(n){transition: var(--transiton-global);}
 }
 
 
-body .screen:has(:hover,:focus) {
+body .screen:has(:hover,:focus,:active) {
 
   &.screen{
     inset: 6cqi;
     border-radius: 7px;
     box-shadow: 0px .5px 10px 1px rgba(88, 87, 87, 0.545),
                 0px -3px 70px 9px rgba(117, 117, 117, 0.407);
-    transition: 1s ease-in-out 1s;
+    /* transition: 1s ease-in-out 1s; */
   }
 
   .taskbar{
-    height: 5cqh;
-    transition: 1s ease-in-out 1s;
+    height: 6%;
+    transition: var(--transiton-global) ;
   }
 
   #start_menu{
+
     margin-bottom: 4.9cqh;
     height: 60cqh;
     width: 28cqw;
+    position: relative;
+    transition:1s;
+
   }
 
   .window_card{
-   width: 50cqi;
+    width: 50cqi;
     top: 3rem;
     right: 3rem;
     
@@ -463,6 +474,9 @@ body .screen:has(:hover,:focus) {
       input{
         width: 100%;
         border-radius: 7px;
+        border: 1px solid var(--primary-bl);
+        padding-inline-start: 3%;
+        &:is(:active,:focus){border: 3px solid var(--primary-bl);}
       }
     }
   }
@@ -710,6 +724,98 @@ body .screen:has(:hover,:focus) {
   }
 }
 
+#game{
+
+  
+  .window_content{
+    scrollbar-gutter: stable;
+    padding-top: 0%;
+    height: auto;
+    color: var(--base-Text-b);
+
+    container-name:window_game ;
+    container-type:inline-size ;
+  }
+
+  .fullscreen_btn{
+    position: absolute;
+    bottom: 2%;
+    right: 2%;
+
+    width: 2rem;
+    aspect-ratio: 1;
+    border:2px solid ;
+    border-radius: 40%;
+    display: grid;
+    grid-template-areas: "d";
+    place-content: center;
+    color: var(--base-Text-b);
+  
+  }
+
+  input[type=checkbox]{
+    grid-area: d;
+    z-index: 2;
+    width: 100%;
+    aspect-ratio: 1;    
+  }
+
+  svg{
+    grid-area: d;
+    &:nth-of-type(2){
+      display: none;
+    }
+  }
+}
+
+#game:has(.fullscreen_btn>input:checked){
+  --top-height:9cqh;
+  inset: 0cqi;
+  width: 100%;
+  z-index: 5;
+  
+  &.window_card{
+    grid-template-areas:
+        " a a a"
+        " c c c"
+        " c c c"
+        " c c c" !important;
+      }
+  .window_content{
+      width: 100%;
+      height: 100%;
+      grid-row: 1/-1;
+      margin-top: var(--top-height);
+  }
+  .window_header{
+      height: var(--top-height) ;
+      grid-area: a;
+      menu[type=context]{display: none;}
+      menu[type=toolbar]{
+        display: flex;
+        padding-inline: 1%;
+        padding-block: .8%;
+        gap: 2%;
+        cursor:not-allowed;
+        color: var(--base-Text-b);
+      }
+
+  }
+    
+  .file_explorer{
+        display: none;
+  }
+  svg{
+    grid-area: d;
+    &:nth-of-type(2){
+      display: block;
+    }
+    &:nth-of-type(1){
+      display: none;
+    }
+  }
+}
+
 /* taskbar elements */
 .taskbar{
   position: absolute;
@@ -804,16 +910,26 @@ body .screen:has(:hover,:focus) {
 
 
 #start_menu{
-
+  contain:content ;
   transition: 1s ease-in-out 1s;
-  position:relative;
-  bottom: 0;
+  /* transition-property: ; */
+  inset: auto auto 0cqi 0cqi  ;
   
   margin-bottom: 3cqh;
   border: 3px solid ;
   
-  height: 30cqh;
+  height: 30%;
   width: 28cqw;
+  
+  &:popover-open{
+    
+    
+    inset: auto auto 6.5cqi 6.7cqi  ;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: 1fr auto 1fr;
+    border-radius: var(--g-r);
+  }
 }
 
 
