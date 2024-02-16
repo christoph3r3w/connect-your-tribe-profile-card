@@ -8,7 +8,7 @@ import fetchJson from './helpers/fetch-json.js'
 
 // Haal data op uit de FDND API, ga pas verder als de data gedownload is
 const {data} = await fetchJson('https://fdnd.directus.app/items/person/40')
-// const {data} = await fetchJson('https://fdnd.directus.app/items/person/40')
+// const {dataE} = await fetchJson('https://fdnd.directus.app/items/person/41')
 console.log(data.nickname); // uncomment om de opgehaalde data te checken
 
 // Maak een nieuwe express app aan

@@ -6,7 +6,7 @@
 
     <ul class="desktop_items">
       <li><button href="#"> <img src="images/icon/839.ico" alt=""><div><p>home</p></div></button></li>
-      <li><button popovertarget="personal" popovertargetaction="show" > <img src="images/chris icon lowlowres.png" alt="personal card icon"><div><p><%= nickname%></p></div></button></li>
+      <li><button  popovertarget="personal" popovertargetaction="show" > <img draggable="false" src="images/chris icon lowlowres.png" alt="personal card icon"><div><p><%= nickname%></p></div></button></li>
       <li><button popovertarget="music" > <img src="images/icon/1221.ico" alt="music icon"><div><p>Music</p></div></button></li>
       <li><button popovertarget="sprint" popovertargetaction="show" > <img src="images/icon/1224.ico" alt="sprint icon"><div><p>sprint</p></div></button></li>
       <li><button popovertarget="game" popovertargetaction="show" > <img src="/images/tumblr_b08776446c99e97ddb6379663d96b2ab_f289af9d_541.png" alt="game icon"><div><p>squad-game</p></div></button></li>
@@ -14,22 +14,26 @@
     </ul>
     
     <button class="trash_can"><a href="#"> <img src="images/icon/261.ico" alt=""></a></button>
-
+    
          
-      <div popover="manual" id="personal" class="window_card" >
+      <div draggable="true" popover="manual" id="personal" class="window_card" >
         <%- include('./partials/window_personal', {window_personal: '',window_type:'personal'}) %> 
       </div>
 
-      <div popover="manual" id="sprint" class="window_card" >
+      <div draggable="true" popover="manual" id="sprint" class="window_card" >
         <%- include('./partials/window_sprint', {window_sprint: '',window_type:'sprint'}) %> 
       </div>
 
-      <div popover="manual" id="music" class="window_card" >
+      <div draggable="true" popover="manual" id="music" class="window_card" >
         <%- include('./partials/window_music', {window_music: '',window_type:'music'}) %> 
       </div>
 
-      <div popover="manual" id="game" class="window_card" >
+      <div draggable="true" popover="manual" id="game" class="window_card" >
         <%- include('./partials/window_game', {window_game: '',window_type:'game'}) %> 
+      </div>
+
+      <div draggable="true" popover="manual" id="squad" class="window_card" >
+        <%- include('./partials/window_squad', {window_squad: '',window_type:'squad'}) %> 
       </div>
 
 

@@ -3,8 +3,8 @@
     <div class="blue_bar">
         <span><%= window_type %> : <%= nickname%></span>
         <ul>
-            <li  title="Min">__</li>
-            <!-- <li title="Max"></li> -->
+            <li  title="Min" id="min">__</li>
+            <li title="Max" id="max"></li>
             <li class="exit_b" title="exit"><button class="exit" 
                  popovertarget="<%= window_type %>" popovertargetaction="hide">✕</button>
                 
@@ -21,7 +21,7 @@
     </menu>
 
     <menu type="context">
-        <span><button>icon</button> <span>back</span></span>
+        <span><button>icon</button> <span></span></span>
         <span><button>icon svg</button></span>
         <span><button>home</button></span>
         <span><input type="search" name="explore" id="explore"></span>
