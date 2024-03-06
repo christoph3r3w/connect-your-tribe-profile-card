@@ -6,16 +6,6 @@
 ![Screenshot 2024-02-09 1321401](https://github.com/christoph3r3w/connect-your-tribe-profile-card/assets/144007933/506f4c74-dab9-4acc-838e-884ee113d6ca)
 
 
-
-## Inhoudsopgave
-
-  * [Beschrijving](#beschrijving)
-  * [Kenmerken](#kenmerken)
-  * [Installatie](#installatie)
-  * [Gebruik](#gebruik)
-  * [Bronnen](#bronnen)
-  * [Licentie](#licentie)
-
 ## Beschrijving
 we had to remake our profile card from [Sprint 1](https://github.com/christoph3r3w/your-tribe-css-basics) with node.js
 
